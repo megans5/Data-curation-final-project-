@@ -1,0 +1,33 @@
+{
+    "path": "C:\\Users\\megan\\OneDrive\\Documents\\Data Curation",
+    "filename": "anes_specialstudy_2020-2022_socialmedia_csv.csv",
+    "file_path": "C:\\Users\\megan\\OneDrive\\Documents\\Data Curation\\anes_specialstudy_2020-2022_socialmedia_csv.csv",
+    "columnNames": ["version", "profile_gender", "profile_age", "profile_state", "profile_relig", "w3p_ideo",
+             "w3socmedia2_t", "w3socmedia2_s", "w3socmedia2_i", "w3socmedia2_f",
+             "w3regstate", "w3reg", "w3turnout", "w3hsvote", "w3hswho", "w3dthonest", "w3dem1honest", "w3startdt", "w3enddt", "w3device", "w3qual"],
+    "typeByCol": {
+        "version": "string",
+        "profile_gender": ["int64", 1,2],
+        "profile_age": ["int64", 18,80],
+        "profile_state": "string",
+        "profile_relig": ["int64", -7,14],
+        "w3p_ideo": ["int64", -6,8],
+        "w3socmedia2_t": ["int64", -7,2],
+        "w3socmedia2_s": ["int64", -7,2],
+        "w3socmedia2_i": ["int64", -7,2],
+        "w3socmedia2_f": ["int64", -7,2],
+        "w3regstate": "string",
+        "w3reg": "int64",
+        "w3turnout": ["int64", -7,4],
+        "w3hsvote": ["int64", -7,4],
+        "w3hswho": ["int64", -7,3],
+        "w3dthonest": ["int64", -7,5],
+        "w3dem1honest": ["int64", -7,5],
+        "w3startdt": ["datetime64[us]", -1.190e+13,1.988e+12],
+        "w3enddt": ["datetime64[us]", -1.190e+13,1.988e+12],
+        "w3device": "string",
+        "w3qual": "int64"
+    },
+
+    "qualityCheckCol" : {"w3qual": [9, -6]}
+}
