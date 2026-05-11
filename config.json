@@ -23,8 +23,8 @@
         "w3hswho": ["int64", -7,3],
         "w3dthonest": ["int64", -7,5],
         "w3dem1honest": ["int64", -7,5],
-        "w3startdt": ["datetime64[us]", -1.190e+13,1.988e+12],
-        "w3enddt": ["datetime64[us]", -1.190e+13,1.988e+12],
+        "w3startdt": "datetime64[us]",
+        "w3enddt": "datetime64[us]",
         "w3device": "string",
         "w3qual": "int64"
     },
