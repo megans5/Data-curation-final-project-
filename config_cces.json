@@ -1,7 +1,7 @@
 {
-    "path": "C:\\Users\\megan\\OneDrive\\Documents\\Data Curation",
-    "fileName": "CCES22_Common_OUTPUT_vv_topost.csv",
-    "filePath": "C:\\Users\\megan\\OneDrive\\Documents\\Data Curation\\CCES22_Common_OUTPUT_vv_topost.csv",
+    "path": "data",
+    "fileName": "CCES22_Common_OUTPUT_vv_topost_data.csv",
+    "filePath": "data/CCES22_Common_OUTPUT_vv_topost_data.csv",
     "dataName": "cces_data",
     "columnNames": ["caseid", "gender4", "birthyr", "inputstate", "region", "starttime", "endtime", "tookpost", "comptype", "pid3", "CC22_300a", "CC22_300c"],
     "typeByCol": {

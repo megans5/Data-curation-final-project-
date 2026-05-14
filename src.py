@@ -176,7 +176,7 @@ def main():
     
     # to change which data set is used, either use "config_cces.json" or "config_anes.json"
     df, type_by_cols, quality_check_col, null_val, id_col, data_name, null_allowed_cols = load_dataset("config_anes.json")
-    df.to_csv(f"data/raw_{data_name}_data.csv", index=False)
+
     removal_dict = {}
     num_rows_before = len(df)
     df, removal_dict = quality_check(df, quality_check_col, logger, removal_dict)
