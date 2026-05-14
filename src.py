@@ -157,7 +157,7 @@ def correct_types(df, type_by_col, logger, removal_dict):
     removal_dict['Remove Out of Range'] = rows_removed_total
     return df, removal_dict
 
-def plot_graphs(df, removal_dict):
+def plot_graphs(df, removal_dict, data_name):
     # turn the dict into df so it can be plotted and rename columns for graph 
     removal_df = pd.DataFrame(list(removal_dict.items()), columns = ["Curation Step", "Number of Rows Removed"])
     removal_df.plot.bar(x="Curation Step", y="Number of Rows Removed", color=None)
@@ -167,11 +167,11 @@ def plot_graphs(df, removal_dict):
     plt.xlabel("Curation Step")
     plt.title("Rows Removed by Curation Step")
     plt.xticks(rotation=13, ha='right')
-    plt.savefig("output/removal_bar_graph.png")
+    plt.savefig(f"reports/{data_name}_removal_bar_graph.png")
 
 
 def main():
-    logger = CurationLogger.CurationLogger("output/curation_log.txt")
+    logger = CurationLogger.CurationLogger("reports/curation_log.txt")
     logger.step("Begin Curation")
     
     # to change which data set is used, either use "config_cces.json" or "config_anes.json"
@@ -186,7 +186,7 @@ def main():
 
     df.to_csv(f"data/curated_{data_name}_data.csv", index=False)
 
-    plot_graphs(df, removal_dict)
+    plot_graphs(df, removal_dict, data_name)
     logger.step("Report", f"Before curation, the data had {num_rows_before} rows. After curtion, it has {len(df)} rows. {num_rows_before - len(df)} rows were removed.")
     logger.close()
 
