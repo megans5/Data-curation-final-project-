@@ -1,0 +1,6 @@
+__pycache__/
+*.__pycache__
+.vscode/
+env/
+venv/
+# I am not including the data and reports folder in this since it is a project and I want the data/reports to be able to be seen in the repo

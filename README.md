@@ -46,4 +46,26 @@ WHAT THE PROJECT DOES:
         - does not work for non csv files
 
 
+Datasets used for project:
 
+    2020-2022 American National Election Social Media Study
+        - Survey about political issues and social media use
+        - Funded by National Science Foundation
+        - Used probablitiy sampling
+        - Three different waves
+        - Comes with codebook and user's guide
+        - Unclear which specific license it is under
+
+        American National Election Studies. 2023. ANES 2020-2022 Social Media Study [dataset and documentation]. July 5, 2023 version. www.electionstudies.org
+        
+
+    Cooperative Election Study Common Content, 2022
+        - 60,000 US adults sampled
+        - Representative sample
+        - Survey
+        - License: Creative Commons CC0 1.0 Universal Public Domain Dedication
+
+
+        Schaffner, B., Ansolabehere, S., & Shih, M. (2023). Cooperative Election Study Common Content, 2022. Harvard Dataverse. https://doi.org/10.7910/dvn/pr4l8p
+
+‌
