@@ -1,7 +1,8 @@
 {
     "path": "C:\\Users\\megan\\OneDrive\\Documents\\Data Curation",
-    "filename": "anes_specialstudy_2020-2022_socialmedia_csv.csv",
-    "file_path": "C:\\Users\\megan\\OneDrive\\Documents\\Data Curation\\anes_specialstudy_2020-2022_socialmedia_csv.csv",
+    "fileName": "anes_specialstudy_2020-2022_socialmedia_csv.csv",
+    "filePath": "C:\\Users\\megan\\OneDrive\\Documents\\Data Curation\\anes_specialstudy_2020-2022_socialmedia_csv.csv",
+    "dataName": "anes_social_media",
     "columnNames": ["version", "caseid", "profile_gender", "profile_age", "profile_state", "profile_relig", "w3p_ideo",
              "w3socmedia2_t", "w3socmedia2_s", "w3socmedia2_i", "w3socmedia2_f",
              "w3regstate", "w3reg", "w3turnout", "w3hsvote", "w3hswho", "w3dthonest", "w3dem1honest", "w3startdt", "w3enddt", "w3device", "w3qual"],
@@ -31,5 +32,5 @@
     },
     "qualityCheckCol" : {"w3qual": [9, -6]},
     "idCol" : "caseid",
-    "nulLVals": ["null", ""]
+    "nulLVals": ["null"]
 }

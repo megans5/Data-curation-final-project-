@@ -1,0 +1,25 @@
+{
+    "path": "C:\\Users\\megan\\OneDrive\\Documents\\Data Curation",
+    "fileName": "CCES22_Common_OUTPUT_vv_topost.csv",
+    "filePath": "C:\\Users\\megan\\OneDrive\\Documents\\Data Curation\\CCES22_Common_OUTPUT_vv_topost.csv",
+    "dataName": "cces_data",
+    "columnNames": ["caseid", "gender4", "birthyr", "inputstate", "region", "starttime", "endtime", "tookpost", "comptype", "pid3", "CC22_300a", "CC22_300c"],
+    "typeByCol": {
+        "caseid": "int64",
+        "gender4": ["int64", 1,2],
+        "birthyr": ["int64", 1900,2022],
+        "inputstate": ["int64", 1,50],
+        "region": ["int64", -1,4],
+        "starttime": "datetime64[us]",
+        "endtime": "datetime64[us]",
+        "tookpost": "int64",
+        "comptype": "string",
+        "pid3": ["int64", 1,5],
+        "CC22_300a": "int64",
+        "CC22_300c": "int64"
+    },
+    "idCol" : "caseid",
+    "qualityCheckCol" : {"tookpost": 1},
+    "nullVals": ["NA"],
+    "nullAllowedCols": ["CC22_300a", "CC22_300c"]
+}

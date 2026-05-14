@@ -1,0 +1,18 @@
+
+Step 1 : Begin Curation.  
+Step 2 : Quality check.  If a quality column is provided, remove rows which failed that check
+	 	For quality check column w3qual: 
+			Before removal number of rows: 5750
+	 		After removal number of rows: 4318
+	 		Total number of rows removed: 1432
+Step 3 : Remove duplicate values.  Remove all duplicate values based on the caseid column
+	 	Before removal of duplicates: 4318 rows
+	 	After removal of duplicates: 4318 rows
+	 	Total number of rows removed: 0
+Step 4 : Remove null.  Remove all null values
+	 Total number of rows removed: 0
+Step 5 : Type Correction and Range Checking.  Check the type of each column and correct it if inconsistent with type from config. Remove any rows with values outside of range specified
+	Column w3startdt change:	Before: Type: str 	After: datetime64[us]
+	Column w3enddt change:	Before: Type: str 	After: datetime64[us]
+	 Total number of rows removed for entire range check: 0
+Step 6 : Report.  Before curation, the data had 5750 rows. After curtion, it has 4318 rows. 1432 rows were removed.

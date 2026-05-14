@@ -1,7 +1,6 @@
 import pandas as pd
 import json
 import matplotlib.pyplot as plt
-# import numpy as np
 import CurationLogger
 
 def load_dataset(config_path):
@@ -47,6 +46,7 @@ def quality_check(df, quality_check_col, logger, removal_dict):
     else:
         logger.log("There is no quality check column.")
 
+    # add the total number of rows removed to the dictionary
     removal_dict['Quality Check'] = rows_removed_total
     return df, removal_dict
 
@@ -79,6 +79,7 @@ def remove_null(df, null_vals, logger, removal_dict, null_allowed_cols):
             rows_removed_total = rows_removed_total + (num_rows_before - num_rows_after)
         
     logger.log(f"Total number of rows removed: {rows_removed_total}")
+    # add the total number of rows removed to the dictionary
     removal_dict['Remove Null Values'] = rows_removed_total
     return df, removal_dict
 
@@ -91,6 +92,7 @@ def remove_duplicates(df, id_col, logger, removal_dict):
     df = df.drop_duplicates(subset=id_col)
     logger.log(f"\tAfter removal of duplicates: {len(df)} rows")
     logger.log(f"\tTotal number of rows removed: {num_rows_before - len(df)}")
+    # add the total number of rows removed to the dictionary
     removal_dict['Remove Duplicates'] = num_rows_before - len(df)
     return df, removal_dict
     
@@ -151,7 +153,7 @@ def correct_types(df, type_by_col, logger, removal_dict):
                 rows_removed_total = rows_removed_total + (num_rows_before - num_rows_after)
         
     logger.log(f"Total number of rows removed for entire range check: {rows_removed_total}")
-    # removal_dict['Remove Out of Range Values'] = rows_removed_total
+    # add the total number of rows removed to the dictionary
     removal_dict['Remove Out of Range'] = rows_removed_total
     return df, removal_dict
 
@@ -159,32 +161,30 @@ def plot_graphs(df, removal_dict):
     # turn the dict into df so it can be plotted and rename columns for graph 
     removal_df = pd.DataFrame(list(removal_dict.items()), columns = ["Curation Step", "Number of Rows Removed"])
     removal_df.plot.bar(x="Curation Step", y="Number of Rows Removed", color=None)
+    
     # plot rows removed by curation step
     plt.ylabel("Number of Rows Removed")
     plt.xlabel("Curation Step")
     plt.title("Rows Removed by Curation Step")
     plt.xticks(rotation=13, ha='right')
-    plt.savefig("removal_bar_graph.png")
-    # plt.show()
+    plt.savefig("output/removal_bar_graph.png")
 
 
 def main():
-    logger = CurationLogger.CurationLogger("curation_log.txt")
+    logger = CurationLogger.CurationLogger("output/curation_log.txt")
     logger.step("Begin Curation")
     
     # to change which data set is used, either use "config_cces.json" or "config_anes.json"
     df, type_by_cols, quality_check_col, null_val, id_col, data_name, null_allowed_cols = load_dataset("config_anes.json")
-    df.to_csv(f"raw_{data_name}_data.csv", index=False)
+    df.to_csv(f"data/raw_{data_name}_data.csv", index=False)
     removal_dict = {}
     num_rows_before = len(df)
-    for col in df.columns:
-        print(col + "  ")
     df, removal_dict = quality_check(df, quality_check_col, logger, removal_dict)
     df, removal_dict = remove_duplicates(df, id_col, logger, removal_dict)
     df, removal_dict = remove_null(df, null_val, logger, removal_dict, null_allowed_cols)
     df, removal_dict = correct_types(df, type_by_cols, logger, removal_dict)
 
-    df.to_csv(f"curated_{data_name}_data.csv", index=False)
+    df.to_csv(f"data/curated_{data_name}_data.csv", index=False)
 
     plot_graphs(df, removal_dict)
     logger.step("Report", f"Before curation, the data had {num_rows_before} rows. After curtion, it has {len(df)} rows. {num_rows_before - len(df)} rows were removed.")
