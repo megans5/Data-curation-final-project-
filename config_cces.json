@@ -15,8 +15,8 @@
         "tookpost": "int64",
         "comptype": "string",
         "pid3": ["int64", 1,5],
-        "CC22_300a": "int64",
-        "CC22_300c": "int64"
+        "CC22_300a": "float64",
+        "CC22_300c": "float64"
     },
     "idCol" : "caseid",
     "qualityCheckCol" : {"tookpost": 1},
