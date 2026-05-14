@@ -65,6 +65,7 @@ Datasets used for project:
         - Survey
         - License: Creative Commons CC0 1.0 Universal Public Domain Dedication
 
+        This file was too big for GitHub, so the link to access it is in the data folder, or follow the following link: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi%3A10.7910/DVN/PR4L8P
 
         Schaffner, B., Ansolabehere, S., & Shih, M. (2023). Cooperative Election Study Common Content, 2022. Harvard Dataverse. https://doi.org/10.7910/dvn/pr4l8p
 
