@@ -1,4 +1,4 @@
 https://electionstudies.org/data-center/2020-2022-social-media-study/ - anes data
 
-https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi%3A10.7910/DVN/PR4L8P - cces data (too big to be uploaded)
+https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi%3A10.7910/DVN/PR4L8P - cces data (too big to be uploaded, so only the columns selected in the config anyway were used for this project)
 
